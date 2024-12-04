@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformação Digital e Inovação Tecnológica - teoria</title>
+    <style>
+     /* Reset básico e estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.2rem; /* Aumentado para melhorar a leitura */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+header h1 {
+    font-size: 3rem; /* Aumentado para maior destaque */
+    color: #333;
+}
+
+.tree-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para os itens da árvore */
+.tree ul {
+    list-style-type: none;
+    padding-left: 20px;
+    border-left: 1px solid #ddd;
+}
+
+.tree li {
+    position: relative;
+    padding: 15px 0 15px 20px; /* Aumentado o espaçamento vertical */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.25rem; /* Aumentado para melhorar a leitura */
+}
+
+/* Destaque para item aberto ao passar o mouse */
+.tree li.open:hover {
+    background-color: #e3f2fd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.tree li:hover {
+    background-color: #f1f1f1;
+}
+
+.tree li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 10px;
+    border-left: 1px solid #ddd;
+}
+
+.tree li > .toggle-box {
+    display: inline-block;
+    width: 24px; /* Aumentado para maior visibilidade */
+    height: 24px; /* Aumentado para maior visibilidade */
+    line-height: 24px;
+    text-align: center;
+    background-color: #ddd;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+    font-size: 1.2rem; /* Aumentado para corresponder ao texto */
+}
+
+.tree li > span {
+    font-weight: bold;
+    color: #333;
+    display: inline-block;
+}
+
+.tree li > p {
+    display: none;
+    margin-top: 8px; /* Ajustado para maior espaçamento */
+    padding-left: 30px; /* Alinhamento com o ícone de abrir/fechar */
+    color: #333;
+    font-size: 1.1rem; /* Aumentado para facilitar a leitura */
+    line-height: 1.8; /* Melhor espaçamento entre linhas */
+}
+
+.tree li.open > p {
+    display: block;
+}
+
+/* Estilo Responsivo */
+/* Para tablets */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem; /* Ajustado para dispositivos menores */
+    }
+
+    .tree-container {
+        padding: 10px;
+    }
+
+    .tree li {
+        padding: 12px 0 12px 18px;
+        font-size: 1.15rem; /* Ajustado para tablets */
+    }
+
+    .tree li > .toggle-box {
+        width: 22px;
+        height: 22px;
+        font-size: 1.1rem; /* Ajustado para tablets */
+    }
+
+    .tree li > p {
+        font-size: 1rem; /* Ajustado para tablets */
+    }
+}
+
+/* Para smartphones */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem; /* Ajustado para melhor encaixe na tela */
+    }
+
+    .tree-container {
+        padding: 8px;
+    }
+
+    .tree li {
+        padding: 10px 0 10px 15px;
+        font-size: 1rem; /* Ajustado para smartphones */
+    }
+
+    .tree li > .toggle-box {
+        width: 20px;
+        height: 20px;
+        font-size: 1rem; /* Ajustado para smartphones */
+    }
+
+    .tree li > p {
+        padding-left: 25px; /* Ajuste para smartphones */
+        font-size: 0.95rem; /* Ajustado para smartphones */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Transformação Digital e Inovação Tecnológica</h1>
+        <img src="https://i.ibb.co/X7kT7VP/slide-1.webp" alt="Descrição da imagem" style="max-width: 80%; height: auto;">
+    </header>
+
+    <div class="tree-container">
+        <div class="tree">
+            <ul>
+                <!-- Item 1 -->
+                <li onclick="toggleDefinition(this)">
+                    <span class="toggle-box">+</span><span>1. Automação Inteligente</span>
+                    <p>Definição: Combinação de automação tradicional com inteligência artificial (IA) para executar tarefas de maneira mais eficiente, com tomada de decisões baseadas em dados.</p>
+                    <ul>
+                        <li onclick="toggleDefinition(this)">
+                            <span class="toggle-box">+</span><span>Exemplo</span>
+                            <p>Chatbots com IA que automatizam atendimento ao cliente e aprendem com interações para melhorar respostas.</p>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Item 2 -->
+                <li onclick="toggleDefinition(this)">
+                    <span class="toggle-box">+</span><span>2. Edge AI</span>
+                    <p>Definição: Inteligência artificial implementada diretamente nos dispositivos próximos ao usuário, sem depender exclusivamente da nuvem, permitindo respostas mais rápidas.</p>
+                    <ul>
+                        <li onclick="toggleDefinition(this)">
+                            <span class="toggle-box">+</span><span>Exemplo</span>
+                            <p>Câmeras de segurança inteligentes que reconhecem rostos em tempo real sem enviar dados para a nuvem.</p>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Item 3 -->
+                <li onclick="toggleDefinition(this)">
+                    <span class="toggle-box">+</span><span>3. Soluções de Otimização</span>
+                    <p>Definição: Técnicas e ferramentas que ajudam a melhorar processos ou sistemas, reduzindo custos e aumentando a eficiência.</p>
+                    <ul>
+                        <li onclick="toggleDefinition(this)">
+                            <span class="toggle-box">+</span><span>Exemplo</span>
+                            <p>Softwares que calculam a melhor rota para entregas, como o utilizado por empresas de logística.</p>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Item 4 -->
+                <li onclick="toggleDefinition(this)">
+                    <span class="toggle-box">+</span><span>4. Híbrido Multicloud</span>
+                    <p>Definição: Estratégia que combina o uso de diferentes provedores de nuvem pública e privada para maior flexibilidade e desempenho.</p>
+                    <ul>
+                        <li onclick="toggleDefinition(this)">
+                            <span class="toggle-box">+</span><span>Exemplo</span>
+                            <p>Uma empresa usa a Amazon Web Services (AWS) para dados públicos e um servidor privado para informações confidenciais.</p>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Item 5 -->
+                <li onclick="toggleDefinition(this)">
+                    <span class="toggle-box">+</span><span>5. Plataformas Serverless</span>
+                    <p>Definição: Sistemas que permitem a execução de código sem necessidade de gerenciar servidores, cobrando apenas pelo uso real.</p>
+                    <ul>
+                        <li onclick="toggleDefinition(this)">
+                            <span class="toggle-box">+</span><span>Exemplo</span>
+                            <p>AWS Lambda, onde você pode executar funções específicas sem precisar configurar servidores.</p>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Item 6 -->
+                <li onclick="toggleDefinition(this)">
+                    <span class="toggle-box">+</span><span>6. Cibersegurança Proativa</span>
+                    <p>Definição: Estratégias de segurança que antecipam ameaças, identificando vulnerabilidades antes que sejam exploradas.</p>
+                    <ul>
+                        <li onclick="toggleDefinition(this)">
+                            <span class="toggle-box">+</span><span>Exemplo</span>
+                            <p>Softwares que monitoram redes continuamente para detectar padrões suspeitos e prevenir ataques.</p>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Item 7 -->
+                <li onclick="toggleDefinition(this)">
+                    <span class="toggle-box">+</span><span>7. Infraestruturas Conectadas</span>
+                    <p>Definição: Redes de dispositivos e sistemas interligados que compartilham dados para melhorar serviços e funcionalidades.</p>
+                    <ul>
+                        <li onclick="toggleDefinition(this)">
+                            <span class="toggle-box">+</span><span>Exemplo</span>
+                            <p>Cidades inteligentes com semáforos conectados que ajustam o tráfego em tempo real.</p>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Item 8 -->
+                <li onclick="toggleDefinition(this)">
+                    <span class="toggle-box">+</span><span>8. Satélites de Baixa Órbita (LEO)</span>
+                    <p>Definição: Satélites que orbitam a Terra a altitudes mais baixas, usados para comunicação mais rápida e precisa.</p>
+                    <ul>
+                        <li onclick="toggleDefinition(this)">
+                            <span class="toggle-box">+</span><span>Exemplo</span>
+                            <p>A constelação Starlink da SpaceX, que fornece internet via satélite.</p>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Item 9 -->
+                <li onclick="toggleDefinition(this)">
+                    <span class="toggle-box">+</span><span>9. Bancos Digitais</span>
+                    <p>Definição: Instituições financeiras que operam exclusivamente online, sem agências físicas.</p>
+                    <ul>
+                        <li onclick="toggleDefinition(this)">
+                            <span class="toggle-box">+</span><span>Exemplo</span>
+                            <p>Nubank, oferecendo contas digitais e cartões de crédito diretamente pelo aplicativo.</p>
+                        </li>
+                    </ul>
+                </li>
+                <!-- Item 10 -->
+                <li onclick="toggleDefinition(this)">
+                    <span class="toggle-box">+</span><span>10. Encriptação Avançada</span>
+                    <p>Definição: Técnicas modernas para codificar dados e protegê-los contra acessos não autorizados.</p>
+                    <ul>
+                        <li onclick="toggleDefinition(this)">
+                            <span class="toggle-box">+</span><span>Exemplo</span>
+                            <p>Criptografia de ponta a ponta usada no WhatsApp para proteger mensagens entre usuários.</p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function toggleDefinition(element) {
+            event.stopPropagation();
+            element.classList.toggle("open");
+
+            // Alterna entre "+" e "-" na caixa de controle
+            const toggleBox = element.querySelector('.toggle-box');
+            toggleBox.textContent = element.classList.contains("open") ? "-" : "+";
+        }
+    </script>
+</body>
+</html>
